@@ -1,0 +1,114 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+#hero{
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, purple, red);
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    flex-direction: column;
+}
+
+#hero h1{
+    font-size: 50px;
+    font-weight: 800;
+}
+
+#hero h1 span{
+    color: purple;
+}
+
+.container-details{
+    margin: 30px 4%;
+    background: plum;
+    width: 60%;
+    height: 40%;
+    min-height: 350px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 5%;
+}
+
+.container-details .input-details{
+    margin: 20px auto;
+    align-items: center;
+    width: 100%;
+}
+.container-details .input-details .option{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+}
+
+.container-details .input-details .option p{
+    color: purple;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.container-details .input-details .option select{
+    flex: .7;
+    width: 50%;
+    border: 0;
+    outline: 0;
+    height: 35px;
+    background: rgb(243, 107, 107);
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container-details .input-details .option select option{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.container-details .input-details input{
+    margin-top: 30px;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    font-size: 35px;
+    width: 100%;
+    background: rgb(243, 210, 243);
+}
+
+button{
+   border: 0;
+   outline: 0;
+   border-radius: 20px;
+   padding: 10px 40px;
+   width: 50%;
+   color: #fff;
+   font-weight: 400;
+   background: linear-gradient(45deg, red, purple);
+   font-size: 20px;
+   cursor: pointer;
+   transition: 0.5s;
+}
+
+::placeholder{
+    color: #fff;
+    font-weight: 600;
+}
+
+button:hover{
+    background: linear-gradient(45deg, purple, red);
+    
+}
