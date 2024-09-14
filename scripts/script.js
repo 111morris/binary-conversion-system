@@ -8,15 +8,18 @@ convertBtn.addEventListener('click', () => {
  if (selectFrom.value === 'Decimal') {
   if (selectTo.value === 'Binary') {
 
-   convBinOct(inputFrom.value, 2);
+   convertDecimalToBase(inputFrom.value, 2);
 
-  } else if (selectTo.value === 'Octadecimal') {
+  } else if (selectTo.value === 'Decimal') {
+   output.value = inputFrom.value;
+  }
+  else if (selectTo.value === 'Octadecimal') {
 
-   convBinOct(inputFrom.value, 8);
+   convertDecimalToBase(inputFrom.value, 8);
    
   } else if (selectTo.value === 'Hexadecimal') {
 
-   hex(inputFrom.value, 16);
+   convertDecimalToBase(inputFrom.value, 16);
 
   }
  } else if (selectFrom.value === 'Binary') {
@@ -50,7 +53,7 @@ convertBtn.addEventListener('click', () => {
 })
 
 
-function convBinOct(decimal, radix) {
+/* function convBinOct(decimal, radix) {
  if (decimal === 0) return '0'; // Handle the case for 0 specifically
 
  let binary = ''; // String to store the binary result
@@ -78,4 +81,20 @@ function hex(decimal, radix) {
   decimal = Math.floor(decimal / radix); // Perform integer division by 16
  }
  output.value = hex;
+}
+ */
+
+function convertDecimalToBase(decimal, radix) {
+ if (decimal === 0) return '0'; 
+
+ const digits = '0123456789ABCDEF'; 
+ let result = ''; 
+
+ while (decimal > 0) {
+  const remainder = decimal % radix; 
+  result = digits[remainder] + result; 
+  decimal = Math.floor(decimal / radix); 
+ }
+
+ output.value = result;
 }
