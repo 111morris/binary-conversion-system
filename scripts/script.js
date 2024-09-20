@@ -25,12 +25,15 @@ convertBtn.addEventListener('click', () => {
  } else if (selectFrom.value === 'Binary') {
   if (selectTo.value === 'Decimal') {
    // console.log('this value is been converted from binary to decimal ');
-   convertBinary(inputFrom.value);
+   convertBinary(inputFrom.value, 2);
 
   } else if (selectTo.value === 'Octadecimal') {
-   console.log('this value is been converted from binary to Octaldecimal ');
+   // console.log('this value is been converted from binary to Octaldecimal ');
+   convertBinary(inputFrom.value, 8);
   } else if (selectTo.value === 'Hexadecimal') {
-   console.log('this value is been converted from binary to hexadecimal')
+   // console.log('this value is been converted from binary to hexadecimal')
+   convertBinary(inputFrom.value, 16);
+
   }
  } else if (selectFrom.value === 'Octadecimal') {
   if (selectTo.value === 'Decimal') {
@@ -99,10 +102,12 @@ function convertDecimalToBase(decimal, radix) {
  output.value = result;
 }
 
-function convertBinary(binary) {
- if (!/^[01]+$/.test(binary)) {
-  output.value = 'You have an error';
- } else {
-  output.value = parseInt(binary, 2);
+function convertBinary(binary, radix) {
+ if (radix === 2) {
+  if (!/^[01]+$/.test(binary)) {
+   output.value = 'You have an error';
+  }
  }
+ output.value = parseInt(binary, radix);
+ console.log('success');
 }
